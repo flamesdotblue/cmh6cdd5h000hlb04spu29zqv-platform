@@ -1,28 +1,22 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import LabChrome from './components/LabChrome';
+import HomeTerminal from './components/HomeTerminal';
+import ProjectsLab from './components/ProjectsLab';
+import ConsoleHub from './components/ConsoleHub';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [focusMode, setFocusMode] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-[#0a0b0f] text-zinc-200 overflow-x-hidden selection:bg-violet-500/40 selection:text-white">
+      <LabChrome focusMode={focusMode} setFocusMode={setFocusMode} />
+      <main className={`transition-all duration-500 ${focusMode ? 'pt-4' : 'pt-16'}`}>
+        <HomeTerminal focusMode={focusMode} />
+        <ProjectsLab focusMode={focusMode} />
+        <ConsoleHub focusMode={focusMode} />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
