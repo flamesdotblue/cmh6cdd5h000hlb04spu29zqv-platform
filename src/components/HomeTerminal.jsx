@@ -29,7 +29,7 @@ function useTypeLines(lines, speed = 26, pause = 600) {
 
 export default function HomeTerminal({ focusMode }) {
   const lines = useMemo(() => [
-    '> Hello, I\'m Albari Yasir Wahid — building the bridge between Flutter, AI, and Hardware.',
+    "> Hello, I'm Albari Yasir Wahid — building the bridge between Flutter, AI, and Hardware.",
     '> Mission: Craft smart systems that respond, not just react.'
   ], []);
   const typed = useTypeLines(lines);

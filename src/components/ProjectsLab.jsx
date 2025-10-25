@@ -89,14 +89,14 @@ export default function ProjectsLab({ focusMode }) {
             </span>
             <div>
               <h2 className="text-xl font-semibold text-white">Projects + Hardware Lab</h2>
-              <p className="text-sm text-zinc-400">Open windows to inspect systems — like an OS for Albari\'s work.</p>
+              <p className="text-sm text-zinc-400">Open windows to inspect systems — like an OS for Albari's work.</p>
             </div>
           </div>
         )}
 
         {/* Windowed project grid with non-traditional layout */}
         <div className="grid md:grid-cols-3 gap-4">
-          {projects.map((p, idx) => (
+          {projects.map((p) => (
             <motion.button key={p.id} onClick={() => setActive(p)} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} whileHover={{ y: -6, rotateX: 2 }} transition={{ type: 'spring', stiffness: 180, damping: 16 }} className="text-left">
               <GlassCard className="p-4 group">
                 <div className="relative h-36 rounded-lg overflow-hidden bg-gradient-to-br from-cyan-500/10 to-violet-600/10 border border-white/10">

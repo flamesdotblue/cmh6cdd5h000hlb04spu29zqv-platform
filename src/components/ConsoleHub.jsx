@@ -10,7 +10,7 @@ function Glass({ className = '', children }) {
 
 function AISandbox() {
   const [messages, setMessages] = useState([
-    { role: 'bot', text: 'Hi, I am Albari\'s lab assistant. Ask me about AI + Flutter + Hardware.' }
+    { role: 'bot', text: "Hi, I am Albari's lab assistant. Ask me about AI + Flutter + Hardware." }
   ]);
   const [input, setInput] = useState('');
 
@@ -111,7 +111,13 @@ function ContactConsole() {
         ))}
       </div>
       <div className="mt-3 flex gap-2">
-        <input value={cmd} onChange={(e)=>setCmd(e.target.value)} onKeyDown={(e)=>{ if(e.key==='Enter'){ parseAndSend(cmd); setCmd(''); } }} placeholder='send_message("hello@albari.dev", "Let\'s collaborate")' className="flex-1 px-3 py-2 rounded-md bg-white/5 border border-white/10 outline-none focus:border-violet-400/50 font-mono text-[12px]"/>
+        <input
+          value={cmd}
+          onChange={(e)=>setCmd(e.target.value)}
+          onKeyDown={(e)=>{ if(e.key==='Enter'){ parseAndSend(cmd); setCmd(''); } }}
+          placeholder="send_message(\"hello@albari.dev\", \"Let’s collaborate\")"
+          className="flex-1 px-3 py-2 rounded-md bg-white/5 border border-white/10 outline-none focus:border-violet-400/50 font-mono text-[12px]"
+        />
         <button onClick={()=>{ parseAndSend(cmd); setCmd(''); }} className="px-3 py-2 rounded-md bg-violet-500/20 text-violet-200 border border-violet-400/30 hover:bg-violet-500/30">Run</button>
       </div>
       <div className="mt-3 flex items-center gap-3 text-xs text-zinc-400">
@@ -122,7 +128,7 @@ function ContactConsole() {
   );
 }
 
-export default function ConsoleHub({ focusMode }) {
+export default function ConsoleHub() {
   return (
     <section id="console" className="relative px-4 py-20">
       <div className="mx-auto max-w-6xl grid lg:grid-cols-3 gap-4">
